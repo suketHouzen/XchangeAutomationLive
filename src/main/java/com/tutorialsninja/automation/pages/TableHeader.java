@@ -6,10 +6,13 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.tutorialsninja.automation.base.Base;
 
-public class HeaderSection {
- public HeaderSection() {
-	 PageFactory.initElements(Base.driver,this);
- }
-	@FindBy(xpath="//*[text()=\"AI Valuation \"]")
-	public static WebElement aiValuationLink;
+public class TableHeader {
+ public TableHeader() {
+
+		PageFactory.initElements(Base.driver, this);
+	}
+	
+	   @FindBy(xpath="//input[@placeholder='Search by property']")
+	   public static WebElement getSearchedProperty;
+	   
 }
