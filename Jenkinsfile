@@ -15,7 +15,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script {
-                	app = docker.build("suketdocker/deals")
+                	app = docker.build("suketdocker/xchange")
                 }
             }
         }
