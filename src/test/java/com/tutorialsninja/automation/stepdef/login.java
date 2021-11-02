@@ -9,7 +9,6 @@ import com.tutorialsninja.automation.pages.TableHeader;
 import com.tutorialsninja.automation.pages.loginPage;
 
 
-import io.cucumber.java.en.*;
 import cucumber.api.java.en.*;
 
 
