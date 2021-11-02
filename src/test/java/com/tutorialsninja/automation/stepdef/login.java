@@ -10,6 +10,8 @@ import com.tutorialsninja.automation.pages.loginPage;
 
 
 import io.cucumber.java.en.*;
+import cucumber.api.java.en.*;
+
 
 import org.junit.Assert;
 
