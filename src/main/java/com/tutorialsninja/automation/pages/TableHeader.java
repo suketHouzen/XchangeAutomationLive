@@ -15,4 +15,10 @@ public class TableHeader {
 	   @FindBy(xpath="//input[@placeholder='Search by property']")
 	   public static WebElement getSearchedProperty;
 	   
+	   @FindBy(xpath="//*[@title='Open']")
+	   public static WebElement areacodeDropdown;
+	   
+	   @FindBy(xpath="//*[@title='Clear']")
+	   public static WebElement clearareaCodes;
+	   
 }

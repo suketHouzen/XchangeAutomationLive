@@ -9,7 +9,7 @@ import com.tutorialsninja.automation.pages.TableHeader;
 import com.tutorialsninja.automation.pages.loginPage;
 
 
-import io.cucumber.java.en.*;
+import cucumber.api.java.en.*;
 
 import org.junit.Assert;
 
@@ -17,6 +17,8 @@ public class login {
     
 	loginPage loginpage = new loginPage();
 	TableHeader tableheader = new TableHeader();
+	public static String fifthProperty;
+	
 	@Given("^I login Xchange$")
 	public void open_the_Firefox_and_launch_the_application() throws Throwable {
 	   
@@ -31,9 +33,16 @@ public class login {
 
 	@When("^I search for property$")
 	public void enter_the_Username_and_Password() throws Throwable {
-	    Thread.sleep(5000);
-		Elements.TypeText(TableHeader.getSearchedProperty, "canary wharf");
+	    
+		Thread.sleep(5000);
+	    Elements.click(TableHeader.areacodeDropdown);
+	    Elements.click(TableHeader.clearareaCodes);
 		
+	    Thread.sleep(5000);
+	    fifthProperty = Base.driver.findElement(By.xpath("//*[@class='rt-tbody']/div[5]/div/div[2]/div/span")).getText();
+	    
+	    Elements.TypeText(TableHeader.getSearchedProperty, fifthProperty);
+	    
 	    Base.driver.findElement(By.xpath("//input[@placeholder='Search by property']")).sendKeys(Keys.ENTER);
 		
 	}
@@ -42,15 +51,15 @@ public class login {
 	
 	public void reset_the_credential() throws Throwable {
 		
-	
+	    
 		
-		String Expected_result ="Canary Wharf, London E14, UK";
+		
 		Thread.sleep(5000);
 		
 		String Actual_result = Base.driver.findElement(By.xpath("//*[@class='rt-tbody']/div[1]/div/div[2]/div/span")).getText();
 		System.out.println("Test is successful " + Actual_result);
 		
-		Assert.assertEquals(Expected_result,Actual_result);
+		Assert.assertEquals(fifthProperty,Actual_result);
 			
 }
 }
