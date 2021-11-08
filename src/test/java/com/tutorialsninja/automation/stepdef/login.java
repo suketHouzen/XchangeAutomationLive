@@ -10,10 +10,6 @@ import com.tutorialsninja.automation.pages.loginPage;
 
 
 import cucumber.api.java.en.*;
-<<<<<<< HEAD
-=======
-
->>>>>>> 702be0dba159bd34bb51d03d70b3ece18f6ac55f
 
 import org.junit.Assert;
 
