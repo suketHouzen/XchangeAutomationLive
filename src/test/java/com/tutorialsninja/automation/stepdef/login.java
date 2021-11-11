@@ -23,6 +23,7 @@ public class login {
 	public void open_the_Firefox_and_launch_the_application() throws Throwable {
 	   
 	   Base.driver.get(Base.reader.getUrl());
+		Thread.sleep(5000);
 
 		Elements.TypeText(loginPage.getLogInEmail, "demo@houzen.co.uk");
 		Elements.TypeText(loginPage.getLoginPassword, "agent123");
