@@ -20,7 +20,7 @@ public class Hooks {
 	@Before
 	public void setUp(Scenario scenario) throws MalformedURLException{
 	PropertyConfigurator.configure(PathHelper.getResourcePath("/src/main/resources/ConfigurationFile/log4j.properties"));
-	log.info("Scenario Started: "+scenario.getName());
+	//log.info("Scenario Started: "+scenario.getName());
 	Base.reader=new PropertyFileReader();
 	Browser.startBrowser();
 	Browser.maximize();
@@ -30,8 +30,8 @@ public class Hooks {
 	if(scenario.isFailed()){
 	scenario.embed(Browser.takeScreenshot(), "image/png");
 	}
-	log.info("Scenario Completed: "+scenario.getName());
-	log.info("Scenario Status is: "+scenario.getStatus());
+	//log.info("Scenario Completed: "+scenario.getName());
+	log.info("Smoke test "+scenario.getStatus());
 	Base.driver.quit();
 	}
 
