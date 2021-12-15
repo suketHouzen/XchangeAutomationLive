@@ -10,6 +10,9 @@ import com.tutorialsninja.automation.config.PropertyFileReader;
 import com.tutorialsninja.automation.framework.Browser;
 import com.tutorialsninja.automation.util.PathHelper;
 
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.*;
 
 
@@ -27,7 +30,7 @@ public class Hooks {
 	@After
 	public void closeBrowser(Scenario scenario){
 	if(scenario.isFailed()){
-	scenario.attach(Browser.takeScreenshot(), "image/png", "screenshot");
+	scenario.embed(Browser.takeScreenshot(), "image/png");
 	}
 	log.info("Scenario Completed: "+scenario.getName());
 	log.info("Scenario Status is: "+scenario.getStatus());

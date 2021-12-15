@@ -2,9 +2,7 @@ package com.tutorialsninja.automation.stepdef;
 
 
 import org.openqa.selenium.By;
-import org.sikuli.script.FindFailed;
-import org.sikuli.script.Pattern;
-import org.sikuli.script.Screen;
+
 
 import com.tutorialsninja.automation.base.Base;
 import com.tutorialsninja.automation.framework.Elements;
@@ -20,7 +18,7 @@ public class Offers {
 	TableHeader tableheader = new TableHeader();
 	
 	@Then("^I click on Instructions lettings$")
-	public void click_on_Instructions_lettings() throws InterruptedException, FindFailed {
+	public void click_on_Instructions_lettings() throws InterruptedException {
 		
 		Elements.click(TableHeader.instructionlettings);
 		Elements.click(TableHeader.areacodeDropdown);
@@ -49,16 +47,7 @@ public class Offers {
 			Elements.TypeText(TableHeader.specificrequirements, "abc");
 			 String filepath = "/Users/swetagautam/Desktop";
 		        String inputFilePath = "/Users/swetagautam/Desktop\\";
-		        Screen s = new Screen();
-		        Pattern fileInputTextBox = new Pattern(filepath + "FileTextBox.PNG");
-		        Pattern openButton = new Pattern(filepath + "OpenButton.PNG");
-
-
-		        // Click on Browse button and handle windows pop up using Sikuli
-		        Base.driver.findElement(By.xpath("//span[normalize-space()='Attach File']")).click();
-		        s.wait(fileInputTextBox, 20);
-		        s.type(fileInputTextBox, inputFilePath + "Test.docx");
-		        s.click(openButton);
+		
 			
 			
 			}
