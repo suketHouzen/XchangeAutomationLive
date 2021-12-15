@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 glue= {"classpath:com.tutorialsninja.automation.stepdef"},
 monochrome=true,
 plugin= {"html:target/cucumber_html_report","json:target/cucumber-reports/Cucumber.json"},
-tags= "@bed"
+tags= "@smokeTest"
 		)
 public class TestRunner {
 
