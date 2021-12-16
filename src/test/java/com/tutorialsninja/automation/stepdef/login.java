@@ -37,7 +37,7 @@ public class login {
 	@When("^I search for property$")
 	public void enter_the_Username_and_Password() throws Throwable {
 	    
-		
+		 Thread.sleep(3000);
 		 fifthProperty = Base.driver.findElement(By.xpath("//*[@class='rt-tbody']/div[5]/div/div[2]/div/span")).getText();
 		 Elements.TypeText(TableHeader.getSearchedProperty, fifthProperty);
 		    
